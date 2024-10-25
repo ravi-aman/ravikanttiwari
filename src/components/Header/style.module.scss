@@ -1,5 +1,4 @@
 .header{
-    font-family: Lexend;
     position: absolute;
     display: flex;
     z-index: 1;
@@ -15,7 +14,6 @@
     .logo{
         display: flex;
         cursor: pointer;
-        font-weight: 400;
         p{
             margin: 0px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
@@ -46,24 +44,14 @@
             }
             .name{
                 padding-right: 30px;
-                .RecodeBy{
+                .codeBy{
                     transform: translateX(-100%);
                 }
-                .rishi{
-                    transform: translateX(-81px);
-                    background: linear-gradient(180deg, #c1ff5d 20%, #ffffff 100%);
-                    color:transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    font-weight: 800;
+                .dennis{
+                    transform: translateX(-65px);
                 }
-                .lahoti{
-                    transform: translateX(-83px);
-                    background: linear-gradient(180deg, #c1ff5d 20%, #ffffff 100%);
-                    color:transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    font-weight: 800;
+                .snellenberg{
+                    transform: translateX(-65px);
                 }
             }
         }
@@ -71,6 +59,7 @@
     .nav{
         display: flex;
         align-items: center;
+
         .el{
             display: flex;
             flex-direction: column;
@@ -78,13 +67,7 @@
             z-index: 1;
             padding: 15px;
             cursor: pointer;
-            font-weight: 400;
             &:hover{
-                background: linear-gradient(180deg, #c1ff5d 30%, #ffffff 80%);
-                color:transparent;
-                background-clip: text;
-                font-weight: 600;
-                transition: color 0.5s ease-in-out;
                 .indicator{
                     transform: scale(1);
                 }
@@ -103,11 +86,9 @@
         }
         a{
             cursor: pointer;
-            font-size: large;
         }
     } 
 }
-
 .headerButtonContainer{
     transform: scale(0);
     position: fixed;
@@ -166,19 +147,3 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .nav{
-        padding-top: 15px;
-    }
-    .header {
-        flex-direction: column;
-        padding: 10px 20px 20px 20px;
-        align-items: center;
-    }
-    .logo{
-        color: black;
-        &:hover{
-            padding-left: 60px;
-        }
-    }
-}
