@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 // const words = ["स्वागत हे", "Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Hallo"]
-const words = ["hello i am ", "ravi", "rk", "binny", "massa", "kadu", "ravikant", "tiwari", "aman"]
+const words = ["hello i am ", "ravi", "rk", "binny", "ravikant", "tiwari", "aman"]
 export default function Index() {
     const [index, setIndex] = useState(0);
     const [dimension, setDimension] = useState({ width: 0, height: 0 });
@@ -53,10 +53,10 @@ export default function Index() {
     }
 
     return (
-        <motion.div variants={slideUp} initial="initial" exit="exit" className="fixed inset-0 flex items-center justify-center z-50 bg-transparent ">
+        <motion.div variants={slideUp} initial="initial" exit="exit" className="fixed inset-0 flex items-center justify-center z-50 bg-none ">
             {dimension.width > 0 &&
                 <>
-                    <motion.p variants={opacity} initial="initial" animate="enter" className="relative z-10 flex items-center text-white text-4xl">
+                    <motion.p variants={opacity} initial="initial" animate="enter" className="relative z-10 flex items-center text-white text-5xl ">
                         <span className="block w-2.5 h-2.5 bg-white rounded-full mr-2.5"></span>
                         {words[index]}
                     </motion.p>

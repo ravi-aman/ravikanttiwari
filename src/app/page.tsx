@@ -1,5 +1,5 @@
 "use client"
-import { Header } from "@/sections/Header";
+// import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
@@ -10,6 +10,7 @@ import { Footer } from "@/sections/Footer";
 import Preloader from '../components/Preloader';
 import { AnimatePresence, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import Header from '../sections/Header/Header';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);

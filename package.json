@@ -12,13 +12,13 @@
     "@svgr/webpack": "^8.1.0",
     "express": "^4.21.1",
     "framer-motion": "^11.3.21",
+    "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.80.4",
     "tailwind-merge": "^2.4.0"
-
   },
   "devDependencies": {
     "@types/locomotive-scroll": "^4.1.3",
