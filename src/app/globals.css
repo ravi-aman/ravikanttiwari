@@ -2,40 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight;
+@layer base {
+  .nav-item {
+    @apply px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white transition duration-300;
   }
 
-  .btn-primary {
-    @apply bg-black text-white;
+  .hero-ring {
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;
   }
 
-  .btn-text {
-    @apply text-black bg-transparent;
-  }
-
-  .logo-ticker-image {
-    @apply h-8 w-auto;
-  }
-
-  .tag {
-    @apply text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight;
-  }
-
-  .section-title {
-    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text;
-  }
-
-  .section-description {
-    @apply text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E];
-  }
-
-  .section-heading {
-    @apply max-w-[540px] mx-auto;
-  }
-
-  .card {
-    @apply p-10 border border-[#222222]/10 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
+  @layer utilities {
+    .container {
+      @apply lg:max-w-5xl;
+    }
   }
 }

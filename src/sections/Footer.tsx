@@ -1,36 +1,42 @@
-import Image from "next/image";
-import logo from "@/assets/logosaas.png";
-import SocialX from "@/assets/social-x.svg";
-import SocialInsta from "@/assets/social-insta.svg";
-import SocialLinkedIn from "@/assets/social-linkedin.svg";
-import SocialPin from "@/assets/social-pin.svg";
-import SocialYoutube from "@/assets/social-youtube.svg";
+import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
+
+const footerLinks = [
+  {
+    title: "Twitter",
+    href: "https://x.com/MorhafGhziel",
+  },
+  {
+    title: "Instagram",
+    href: "https://www.instagram.com/4uee_m/?next=%2F",
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/morhaf-ghziel-a720a72b9/",
+  },
+];
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-[#BCBCBC] text-sm py-10 text-center">
+    <footer className="relative z-10 overflow-x-clip">
+      <div className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
       <div className="container">
-        <div className="inline-flex relative before:content-[''] before:top-2 before:bottom-0 before:w-full before:blur before:bg-[linear-gradient(to_right,#F87BFF,#FB92CF,#FFDD9B,#C2F0B1,#2FD8FE)] before:absolute">
-          <Image src={logo} height={40} alt="SaaS logo" className="relative" />
+        <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between gap-8 items-center">
+          <div className="text-white/40">&copy; 2024. All rights reserved.</div>
+          <nav className="flex flex-col md:flex-row items-center gap-8">
+            {footerLinks.map((link) => (
+              <a
+                href={link.href}
+                key={link.title}
+                className="inline-flex items-center gap-1.5 text-white/60 hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="font-semibold">{link.title}</span>
+                <ArrowUpRight className="size-4" />
+              </a>
+            ))}
+          </nav>
         </div>
-        <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          <a href="#">About</a>
-          <a href="#">Features</a>
-          <a href="#">Customers</a>
-          <a href="#">Pricing</a>
-          <a href="#">Help</a>
-          <a href="#">Careers</a>
-        </nav>
-        <div className="flex justify-center gap-6 mt-6">
-          <SocialX />
-          <SocialInsta />
-          <SocialLinkedIn />
-          <SocialPin />
-          <SocialYoutube />
-        </div>
-        <p className="mt-6">
-          &copy; 2024 Your Company, Inc. All rights reserved.
-        </p>
       </div>
     </footer>
   );

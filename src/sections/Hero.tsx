@@ -1,88 +1,176 @@
 "use client";
-import ArrowIcon from "@/assets/arrow-right.svg";
-import cogImage from "@/assets/cog.png";
-import cylinderImage from "@/assets/cylinder.png";
-import noodleImage from "@/assets/noodle.png";
+
+import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
-import { useRef } from "react";
+import ArrowDown from "@/assets/icons/arrow-down.svg";
+import grainImage from "@/assets/images/grain.jpg";
+import StarIcon from "@/assets/icons/star.svg";
+import HeroOrbit from "@/components/HeroOrbit";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
+import Link from "next/link";
 
-export const Hero = () => {
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start end", "end start"],
-  });
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+export const HeroSection = () => {
+  const handleScrollToSection = (
+    sectionId: string,
+    event: React.MouseEvent<HTMLElement>
+  ) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const headerOffset = 80;
 
+      window.scrollTo({
+        top: sectionTop - headerOffset,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
-    <section
-      ref={heroRef}
-      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip"
+    <div
+      className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
+      id="home"
     >
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)] ">
+        <div
+          className="absolute inset-0 -z-30 opacity-5"
+          style={{
+            backgroundImage: `url(${grainImage.src})`,
+          }}
+        ></div>
+        <div className="size-[620px] hero-ring"></div>
+        <div className="size-[820px] hero-ring"></div>
+        <div className="size-[1020px] hero-ring"></div>
+        <div className="size-[1220px] hero-ring"></div>
+        <HeroOrbit
+          size={430}
+          rotation={-14}
+          shouldOrbit
+          orbitDuration="30s"
+          shouldSpin
+          spinDuration="3s"
+        >
+          <SparkleIcon className="size-8 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={440}
+          rotation={79}
+          shouldOrbit
+          orbitDuration="32s"
+          shouldSpin
+          spinDuration="3s"
+        >
+          <SparkleIcon className="size-5 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
+          <div className="size-2 rounded-full bg-emerald-300/30" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={530}
+          rotation={178}
+          shouldOrbit
+          orbitDuration="36s"
+          shouldSpin
+          spinDuration="3s"
+        >
+          <SparkleIcon className="size-10 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={550}
+          rotation={20}
+          shouldOrbit
+          orbitDuration="38s"
+          shouldSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={590}
+          rotation={98}
+          shouldOrbit
+          orbitDuration="40s"
+          shouldSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-8 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+          <div className="size-2 rounded-full bg-emerald-300/30" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={710}
+          rotation={144}
+          shouldOrbit
+          orbitDuration="44s"
+          shouldSpin
+          spinDuration="3s"
+        >
+          <SparkleIcon className="size-14 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
+          <div className="size-3 rounded-full bg-emerald-300/30" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={800}
+          rotation={-72}
+          shouldOrbit
+          orbitDuration="48s"
+          shouldSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-28 text-emerald-300" />
+        </HeroOrbit>
+      </div>
+
       <div className="container">
-        <div className="md:flex items-center">
-          <div className="md:w-[478px]">
-            <div className="tag">Version 2.0 is here</div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
-              Pathway to productivity
-            </h1>
-            <p className="text-xl text-[#010D3E] tracking-tight mt-6">
-              Celebrate the joy of accomplishment with an app designed to track
-              your progress, motivate your efforts, and celebrate your
-              successes.
-            </p>
-            <div className="flex gap-1 items-center mt-[30px]">
-              <button className="btn btn-primary">Get for free</button>
-              <button className="btn btn-text gap-1">
-                <span>Learn more</span>
-                <ArrowIcon className="h-5 w-5" />
-              </button>
+        <div className="flex items-center flex-col">
+          <Image
+            src={memojiImage}
+            className="size-[100px]"
+            alt="Person peeking from behind laptop"
+          />
+          <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
+            <div className="bg-green-500 rounded-full size-2.5 relative">
+              <div className="bg-green-500 inset-0 rounded-full absolute animate-ping-large"></div>
+            </div>
+            <div className="text-sm font-medium">
+              Available for new projects
             </div>
           </div>
-          <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
-            <motion.img
-              src={cogImage.src}
-              alt="Cog image"
-              className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
-              animate={{
-                translateY: [-30, 30],
-              }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 3,
-                ease: "easeInOut",
-              }}
-            />
-            <motion.img
-              src={cylinderImage.src}
-              width={220}
-              height={220}
-              alt="Cylinder image"
-              className="hidden md:block -top-8 -left-32 md:absolute"
-              style={{
-                translateY: translateY,
-              }}
-            />
-            <motion.img
-              src={noodleImage.src}
-              width={220}
-              alt="Noodle image"
-              className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
-              style={{
-                rotate: 30,
-                translateY: translateY,
-              }}
-            />
-          </div>
+        </div>
+        <div className="max-w-lg mx-auto">
+          <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
+            Building Exceptional User Experiences
+          </h1>
+          <p className="text-center mt-4 text-white/60 md:text-lg">
+            i specialize in transforming designs into functional,
+            high-performing web applications. Let&#39;s discuss your next
+            project.
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+          <button className=" relative inline-flex gap-2 border border-white/15 items-center rounded-xl px-6 h-12">
+            <span
+              className="font-semibold"
+              onClick={(e) => handleScrollToSection("projects", e)}
+            >
+              Explore My Work
+            </span>
+            <ArrowDown className="size-4" />
+          </button>
+          <Link
+            href="https://www.linkedin.com/in/morhaf-ghziel-a720a72b9/"
+            className="relative"
+            target="_blank"
+          >
+            <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
+              <span>👋</span>
+              <span className="font-bold">Let&#39;s Connect</span>
+            </button>
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
