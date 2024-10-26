@@ -11,7 +11,7 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
-  title: "Morhaf",
+  title: "Ravikant Tiwari",
   description:
     "Building modern, high-performing web experiences with clean design and functionality. Crafted with attention to detail and supported by the expertise of Frontend Tribe.",
 };
