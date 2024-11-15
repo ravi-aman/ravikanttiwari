@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import Nav from './sidebarNavigation';
 import gsap from 'gsap';
@@ -73,8 +73,8 @@ export default function Index() {
                 <div className="flex items-center">
                     <Magnetic>
                         <div className="flex flex-col relative z-10 p-4 cursor-pointer font-light transition-all duration-500 ease-in-out hover:bg-[linear-gradient(180deg,#c1ff5d_30%,#ffffff_80%)] hover:text-transparent hover:bg-clip-text">
-                            <div className="text-lg" onClick={() => scrollToSection('work')}>
-                                Work
+                            <div className="text-lg" onClick={() => redirect('/work')}>
+                                project
                             </div>
                             <div className="absolute w-1.5 h-1.5 top-[45px] left-1/2 bg-white rounded-full transform scale-0 transition-transform duration-200 ease-[cubic-bezier(0.76,0,0.24,1)]"></div>
                         </div>

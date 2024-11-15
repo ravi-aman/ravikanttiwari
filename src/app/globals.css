@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   .nav-item {
@@ -16,4 +21,23 @@
       @apply lg:max-w-5xl;
     }
   }
+}
+h1,
+span,
+h4,
+p,
+a,
+button {
+  color: white;
+}
+.react-icons {
+  color: black;
+}
+/* Locomotive Scroll default styles */
+[data-scroll-container] {
+  overflow: hidden;
+}
+
+[data-scroll-section] {
+  scroll-snap-align: start;
 }

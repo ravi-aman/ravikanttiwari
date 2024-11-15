@@ -1,3 +1,5 @@
+"use client"
+
 import React, { Fragment } from "react";
 import TechIcon from "@/components/TechIcon";
 import { twMerge } from "tailwind-merge";

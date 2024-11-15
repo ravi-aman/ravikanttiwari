@@ -11,6 +11,7 @@ import Preloader from '../components/Preloader';
 import { AnimatePresence, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Header from '../sections/Header/Header';
+import "./globals.css";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
